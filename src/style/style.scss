@@ -5,21 +5,140 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  ul {
+    padding: 18px 0 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 38px;
+    @media screen and (max-width: 1300px) {
+      gap: 20px;
+    }
+    @media screen and (max-width: 1110px) {
+      gap: 10px;
+    }
+    li {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      color: rgb(31, 31, 31);
+      cursor: pointer;
+      a {
+        color: rgb(31, 31, 31);
+      }
+    }
+  }
+  .number {
+    a {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 150%;
+      color: rgb(238, 37, 35);
+    }
+  }
+}
+
+.benefits,
+.info {
+  top: -200px;
+  // top: 64px;
+  padding: 26px 36px 20px 28px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: rgb(255, 255, 255);
+  li:first-child {
+    padding-bottom: 9.5px;
+  }
+  li:last-child {
+    padding-top: 10.5px;
+    border-top: 1px solid rgb(231, 231, 231);
+  }
+}
+
+.active {
+  top: 64px;
+}
+
+.info {
+  li {
+    padding-right: 84px;
+  }
+}
+
+.container {
+  max-width: 1441px;
+  margin: 0 auto;
+  padding: 0 10px;
+  @media screen and (max-width: 768px) {
+    padding: 0 40px;
+  }
+}
+
+.banner {
+  padding: 64px 0;
+  background-image: url(../assets/image/cover.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(248, 248, 248);
+  @media screen and (max-width: 768px) {
+    background-position: 70% 0;
+  }
+  h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 130%;
+    @media screen and (max-width: 768px) {
+      font-size: 40px;
+      line-height: 125%;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 38px;
+    }
+  }
+  .button {
+    margin-top: 40px;
+    width: 290px;
+    height: 50px;
+    @media screen and (max-width: 768px) {
+      width: 260px;
+    }
+  }
+}
 .services {
   padding: 64px 0;
-  .container {
-    max-width: 1441px;
-    margin: 0 auto;
-    padding: 0 10px;
-    @media screen and (max-width: 768px) {
-      padding: 0 40px;
-    }
+  @media screen and (max-width: 768px) {
+    padding-top: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    padding-top: 6px;
   }
   h2 {
     font-family: "Inter", sans-serif;
     font-size: 30px;
     font-weight: 600;
     line-height: 150%;
+    @media screen and (max-width: 768px) {
+      margin-top: 54px;
+    }
   }
   .services__items {
     margin-top: 40px;
@@ -128,11 +247,8 @@
     height: 86px;
     border-radius: 8px 0px 0px 8px;
     font-weight: 600;
-    @media screen and (max-width: 768px) {
-      top: 10px;
-    }
+    z-index: 1;
     @media screen and (max-width: 500px) {
-      top: 6px;
       width: 145px;
       height: 54px;
       span {
@@ -152,6 +268,7 @@
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  line-height: 150%;
   color: rgb(255, 255, 255);
   cursor: pointer;
   &:hover {
