@@ -19,23 +19,106 @@ header {
   align-items: center;
   gap: 10px;
 }
-header ul {
+header .user,
+header .hamburger {
+  display: none;
+}
+@media screen and (max-width: 1064px) {
+  header .logo {
+    padding: 9px 0;
+  }
+  header .user {
+    display: block;
+    cursor: pointer;
+    margin-left: 270px;
+  }
+  header .hamburger {
+    display: block;
+    right: 0;
+    cursor: pointer;
+  }
+  header .hamburger span {
+    display: block;
+    height: 3px;
+    width: 24px;
+    background-color: rgb(238, 37, 35);
+  }
+  header .hamburger span:not(:first-child) {
+    margin-top: 4.5px;
+  }
+  header .hamburger_active {
+    position: absolute;
+  }
+  header .hamburger_active span:nth-child(2) {
+    opacity: 0;
+  }
+  header .hamburger_active span:nth-child(1) {
+    transform: translate(0, 7.5px) rotate(45deg);
+  }
+  header .hamburger_active span:nth-child(3) {
+    transform: translate(0, -7.5px) rotate(-45deg);
+  }
+  header .number {
+    display: none;
+  }
+}
+@media screen and (max-width: 780px) {
+  header .user {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1064px) {
+  header .logo {
+    padding-left: 10px;
+  }
+  header .hamburger {
+    padding-right: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  header .logo {
+    padding-left: 40px;
+  }
+  header .hamburger {
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 1064px) {
+  header nav {
+    position: absolute;
+    top: 0;
+    right: -1100px;
+    padding-left: 10px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.2s ease-in-out;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  header nav {
+    padding-left: 40px;
+  }
+}
+header nav ul {
   padding: 18px 0 22px;
   display: flex;
   justify-content: space-between;
   gap: 38px;
 }
 @media screen and (max-width: 1300px) {
-  header ul {
+  header nav ul {
     gap: 20px;
   }
 }
-@media screen and (max-width: 1110px) {
-  header ul {
+@media screen and (max-width: 1120px) {
+  header nav ul {
     gap: 10px;
   }
 }
-header ul li {
+header nav ul li {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -43,8 +126,11 @@ header ul li {
   color: rgb(31, 31, 31);
   cursor: pointer;
 }
-header ul li a {
+header nav ul li a {
   color: rgb(31, 31, 31);
+}
+header .nav_active {
+  right: 0;
 }
 header .number a {
   font-family: "Inter", sans-serif;
@@ -73,6 +159,12 @@ header .number a {
   padding-top: 10.5px;
   border-top: 1px solid rgb(231, 231, 231);
 }
+@media screen and (max-width: 1064px) {
+  .benefits,
+  .info {
+    display: none;
+  }
+}
 
 .active {
   top: 64px;
@@ -82,14 +174,22 @@ header .number a {
   padding-right: 84px;
 }
 
-.container {
+.container,
+.container-header {
   max-width: 1441px;
   margin: 0 auto;
   padding: 0 10px;
 }
 @media screen and (max-width: 768px) {
-  .container {
+  .container,
+  .container-header {
     padding: 0 40px;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .container-header {
+    padding: 0 0;
   }
 }
 
