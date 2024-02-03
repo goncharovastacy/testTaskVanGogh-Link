@@ -87,11 +87,10 @@ header {
     @media screen and (max-width: 1064px) {
       position: absolute;
       top: 0;
-      right: -1100px;
+      display: none;
       padding-left: 10px;
       width: 100%;
       background-color: rgb(255, 255, 255);
-      transition: all 0.2s ease-in-out;
       ul {
         flex-direction: column;
       }
@@ -125,7 +124,7 @@ header {
   }
 
   .nav_active {
-    right: 0;
+    display: block;
   }
 
   .number {
